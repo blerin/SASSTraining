@@ -1,0 +1,62 @@
+<project basedir="." default="sass">
+	<!-- properties -->
+	<property name="sass.bin.dir" location="c:/Ruby193/bin" />
+	<property name="sass.cache" location="./.sass.cache" />
+	<property name="sass.input.dir" location="./src/sass" />
+	<property name="sass.output.dir" location="./src/css" />
+    <condition property="exec_file" value="sass.bat" else="sass" >
+    	  <os family="windows" />
+    </condition>
+    <property name="sass.cache" location="./sass.cache" />
+	<property name="tmp" location="${java.io.tmpdir}/ant-temp" />
+   
+    <!-- Target to build our code. This will first copy our CSS files to a temporary folder, then compile SCCS files into it, and lastly
+    copy compiled CSS files to css directory again -->
+	<target name="sass">
+    	
+    			<!-- crear carpeta temporal. Copiamos ahí todos los css -->
+    			<delete dir="${tmp}" includeemptydirs="true" /> 
+    			<mkdir dir="${tmp}" />
+    			<copy todir="${tmp}" overwrite="true" force="true" >
+    				<fileset dir="${sass.output.dir}" includes="*.scss" />
+    			</copy>
+    	
+    			<!-- for windows -->
+    			<echo message="Building CSS in  ${sass.bin.dir}\${exec_file}" />
+    			<exec executable="${sass.bin.dir}\${exec_file}" dir="${sass.bin.dir}" failonerror="true" osfamily="windows">
+    				<arg value="--trace" />
+    				<arg value="--line-comments" />
+    				<arg value="--debug-info" />
+    				<arg value="--scss" />
+    				<arg value="--cache-location" />
+    				<arg value="${sass.cache}/" />
+    				<arg value="--style" />
+    				<arg value="${sass.output.dir}" />
+    				<arg value="--update" />
+    				<arg value="${sass.input.dir}:${tmp}" />
+    			</exec>
+		
+				<!-- Run sass to compile all the .scss files -->
+				<!-- for UNIX (e.g. on Jenkins server) -->
+				<exec executable="sass" failonerror="true" osfamily="unix">
+					<arg value="--trace" />
+					<arg value="--line-comments" />
+					<arg value="--debug-info" />
+					<arg value="--scss" />
+					<arg value="--cache-location" />
+					<arg value="${sass.cache}/" />
+					<arg value="--style" />
+					<arg value="${sass.output.dir}" />
+					<arg value="--update" />
+					<arg value="${sass.input.dir}:${tmp}" />
+				</exec>
+    			
+    			<!-- After build, copy temp files to css files. Override -->
+    			<echo message="Copying temporary CSS to ${sass.output.dir} from ${tmp}" />
+				<delete dir="${sass.output.dir}" includeemptydirs="true" /> 
+		    	<mkdir dir="${sass.output.dir}" />
+    			<copy todir="${sass.output.dir}" overwrite="true" force="true" >
+    	    		<fileset dir="${tmp}" excludes="*.css.map" />
+    	    	</copy>
+    </target>
+</project>

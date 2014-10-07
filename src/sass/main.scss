@@ -1,0 +1,54 @@
+$appColor: #019C7A;
+$buttonPadding: 10px;
+
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+   background-color: #E6E6E6;
+}
+
+#button {
+  text-align: center;
+  padding: $buttonPadding;
+  background-color: $appColor;
+}
+
+#header {
+   padding:10px;
+}
+
+#body {
+   padding:10px;
+   padding-bottom:30px;   /* Height of the footer */
+}
+
+#button li {
+  display: inline;
+}
+
+#button li a {
+  font-family: Arial;
+  text-decoration: none;
+  padding: $buttonPadding;
+  background-color: $appColor;
+  color: #fff;
+}
+
+#footer {
+  background-color: #019C7A;
+  background-image: url('../images/foot.png');
+  background-repeat: no-repeat;
+  height: 30px;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
