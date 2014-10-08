@@ -14,7 +14,6 @@
     copy compiled CSS files to css directory again -->
 	<target name="sass">
     	
-    			<!-- crear carpeta temporal. Copiamos ahí todos los css -->
     			<delete dir="${tmp}" includeemptydirs="true" /> 
     			<mkdir dir="${tmp}" />
     			<copy todir="${tmp}" overwrite="true" force="true" >
@@ -51,7 +50,6 @@
 					<arg value="${sass.input.dir}:${tmp}" />
 				</exec>
     			
-    			<!-- After build, copy temp files to css files. Override -->
     			<echo message="Copying temporary CSS to ${sass.output.dir} from ${tmp}" />
 				<delete dir="${sass.output.dir}" includeemptydirs="true" /> 
 		    	<mkdir dir="${sass.output.dir}" />
