@@ -1,43 +1,19 @@
-@import "fonts";    //Getting the data from _fonts.scss
-@import "colours";  //Getting the data from _colours.scss
+@import "modules/colours";  //Getting the data from _colours.scss
+@import "modules/fonts";    //Getting the data from _fonts.scss
 
-/* vars declaration */
-$container-height: 400px;
-$container-width: 800px;
-$container-small-width: $container-width/4;
-$container-gutter: 20px;
+@import "partials/all";  //Getting all partials
 
-
-.full-importing-container {
-  position: fixed;  
-  height: $container-height + ($container-gutter * 2);                //height of the element, plus, paddins containers on it
-  width: $container-width + ($container-gutter * 4);                  //width of the element, plus, paddins of left and right containers
-  margin: $container-gutter;
-  
-  /* Center the elements */
-  $half-width-container: $container-width / 2 + $container-gutter * 3;         //half width of the element, plus, half paddins of left and right containers
-  left: calc(50% - #{$half-width-container});      
-  left: -webkit-calc(50 - #{$half-width-container});  
-  left: -moz-calc(50% - #{$half-width-container});  
-  
-  $half-top-container: $container-height/2 + $container-gutter * 2;         //half height of the element, plus, paddings of elements
-  top: calc(50% - #{$half-top-container});      
-  top: -webkit-calc(50 - #{$half-top-container});  
-  top: -moz-calc(50% - #{$half-top-container});  
-  
-  background-color: $_colour0;
-  border: 2px solid $_colour3; 
-}
 
 /* Common style for containers */
 .importing-container {
-  height: $container-height;
-  padding: $container-gutter;
+  height: $_container-height;
+  padding: $_container-gutter;
+  text-align: justify;
 }
 
 /* Just for first container */
 .left-importing-container {  
-  width: $container-small-width;
+  width: $_container-small-width;
   float: left;  
   font-size: $_font-big;
   
@@ -47,7 +23,7 @@ $container-gutter: 20px;
 
 /* Just for second container */
 .right-importing-container {
-  width: $container-small-width * 3;
+  width: $_container-small-width * 3;
   float: right;  
   font-size: $_font-small;
   

@@ -1,2 +1,4 @@
-@import "fonts";    //Getting the data from _fonts.scss
-@import "colours";  //Getting the data from _colours.scss
+@import "modules/colours";  //Getting the data from _colours.scss
+@import "modules/fonts";    //Getting the data from _fonts.scss
+
+@import "partials/all";  //Getting all partials
