@@ -9,7 +9,7 @@ $_container-small-width: $_container-width/4;
 $_container-gutter: 20px;
 
 
-.full-importing-container {
+.full-container {
   position: fixed;  
   height: $_container-height + ($_container-gutter * 2);                //height of the element, plus, paddins containers on it
   width: $_container-width + ($_container-gutter * 4);                  //width of the element, plus, paddins of left and right containers
