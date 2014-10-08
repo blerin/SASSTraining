@@ -1,30 +1,32 @@
-$appColor: #019C7A;
-$buttonPadding: 10px;
+/* Variables */
 
+$appColor: #019C7A;
+$bodyColor: #D8D8D8;
+$fontColor: #fff;
+
+$buttonPadding: 10px;
+$noMargin: 0px;
+$noPadding: 0px;
+
+/* */
 
 html,
 body {
-   margin:0px;
-   padding:0px;
+   margin: $noMargin;
+   padding: $noPadding;
    height:100%;
 }
 
-#container {
-   min-height:100%;
-   position:relative;
-   background-color: #E6E6E6;
+#body {
+   background-color: $bodyColor;
+   height: 100%;
 }
 
 #button {
   text-align: center;
   padding: $buttonPadding;
   background-color: $appColor;
-  margin: 0px;
-}
-
-#body {
-   background-color: #D8D8D8;
-   height: 100%;
+  margin: $noMargin;
 }
 
 #button li {
@@ -36,11 +38,11 @@ body {
   text-decoration: none;
   padding: $buttonPadding;
   background-color: $appColor;
-  color: #fff;
+  color: $fontColor;
 }
 
 #footer {
-  background-color: #019C7A;
+  background-color: $appColor;
   background-image: url('../images/foot.png');
   background-repeat: no-repeat;
   height: 30px;
