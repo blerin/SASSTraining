@@ -3,12 +3,12 @@
 
 
 /* vars declaration */
-$_container-height: 525px;
+$_container-height: 480px;
 $_container-width: 950px;
 $_container-small-width: $_container-width/4;
 $_container-gutter: 20px;
 
-
+/* start style declaration */
 .full-container {
   position: fixed;  
   height: $_container-height + ($_container-gutter * 2);                //height of the element, plus, paddins containers on it
