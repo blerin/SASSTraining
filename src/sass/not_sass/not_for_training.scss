@@ -15,11 +15,7 @@ body {
    margin: $noMargin;
    padding: $noPadding;
    height:100%;
-}
-
-#body {
    background-color: $bodyColor;
-   height: 100%;
 }
 
 #button {
@@ -43,7 +39,7 @@ body {
 
 #footer {
   background-color: $appColor;
-  background-image: url('../images/foot.png');
+  background-image: url('../../images/foot.png');
   background-repeat: no-repeat;
   height: 30px;
   position:absolute;

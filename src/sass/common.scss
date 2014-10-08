@@ -1,0 +1,13 @@
+@import "colours";  //Getting the data from _colours.scss
+
+/* vars declaration */
+$no-gutter: 0px;
+
+
+html,
+body {
+   margin: $no-gutter;
+   padding: $no-gutter;
+   height: 100%;
+   background-color: $_colour5;
+}

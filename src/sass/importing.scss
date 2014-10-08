@@ -1,10 +1,12 @@
 @import "fonts";    //Getting the data from _fonts.scss
 @import "colours";  //Getting the data from _colours.scss
 
+/* vars declaration */
 $container-height: 400px;
 $container-width: 800px;
 $container-small-width: $container-width/4;
 $container-gutter: 20px;
+
 
 .full-importing-container {
   position: fixed;  
