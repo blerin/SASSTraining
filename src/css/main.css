@@ -1,36 +1,36 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\000035}}
 html, body {
   margin: 0;
   padding: 0;
   height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000312}}
 #container {
   min-height: 100%;
   position: relative;
   background-color: #E6E6E6; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000318}}
 #button {
   text-align: center;
   padding: 10px;
   background-color: #019C7A; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000324}}
 #header {
   padding: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000328}}
 #body {
   padding: 10px;
   padding-bottom: 30px;
   /* Height of the footer */ }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000333}}
 #button li {
   display: inline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000337}}
 #button li a {
   font-family: Arial;
   text-decoration: none;
@@ -38,7 +38,7 @@ html, body {
   background-color: #019C7A;
   color: #fff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/PruebaDefinitiva\/src\/sass\/main\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/SASSTraining\/src\/sass\/main\.scss}line{font-family:\0000345}}
 #footer {
   background-color: #019C7A;
   background-image: url("../images/foot.png");
