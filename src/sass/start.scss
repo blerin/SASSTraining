@@ -1,4 +1,66 @@
-@import "modules/colours";  //Getting the data from _colours.scss
-@import "modules/fonts";    //Getting the data from _fonts.scss
-
 @import "partials/all";  //Getting all partials
+
+/* These are variables to use 
+   globally in our classes. */
+
+//Containers height  
+$welcomeContainerHeight: 70%*0.5;
+$farewellContainerHeight: 50%-15%;
+
+//Font values
+$font-list : Helvetica, Arial, sans-serif; 
+$textSize: 32px; 
+
+//Colors and shapes
+$borderColor: black;
+$border: 2px solid $borderColor;
+$lightTextColor: white;
+
+//Other values
+$before: before;
+$halfPercentage: 50%;
+
+.start-container {
+    $containerMargin: 0px auto !global; //Global variable
+    margin: $containerMargin;
+    top: $halfPercentage;
+    position: relative;
+    transform: translateY(-$halfPercentage);
+}
+
+.welcome-container {
+    $containerWidth: 80% !global; //Global variable
+    $containerColorWelcome: (#668799 + #001000);  
+    width: $containerWidth;
+    height: $welcomeContainerHeight;
+    margin: $containerMargin;
+    background-color: $containerColorWelcome;
+    border: $border;
+}
+
+.welcome-text {
+    font-size: $textSize;
+}
+
+.farewell-container { 
+    $containerColorFarewell: rgb(0, 49, 51); //Local variable
+    width: $containerWidth; //Variable declarated in .welcome-container
+    height: farewellContainerHeight;
+    margin: $containerMargin; //Variable declarated in .welcome-container
+    background-color: $containerColorFarewell;
+    border: $border; 
+}
+
+.farewell-container:#{$before} { //Interpolation
+    $value: null; 
+    $text: "Feel free to play and discover #{$value} ."; //Text variable with null value and interpolation
+    content: $text;
+    font-size: $textSize;
+    color: $lightTextColor;
+}
+
+.farewell-container p {
+    font-family: $font-list;
+    font-size: $textSize;
+    color: hsl($hue: 0, $saturation: 60%, $lightness: $halfPercentage); //Function
+}
