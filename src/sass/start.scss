@@ -3,9 +3,10 @@
 /* These are variables to use 
    globally in our classes. */
 
-//Containers height  
+//Sizes 
 $welcome-container-height: 70%*0.5;
-$farewell-container-height: 50%-15%;
+$farewell-container-height: (50%/2)+15%;
+$half-percentage: 50%;
 
 //Font values
 $font-list : Helvetica, Arial, sans-serif; 
@@ -14,12 +15,15 @@ $text-size: 32px;
 //Colors and shapes
 $border-color: black;
 $container-border: 2px solid $border-color;
-$light-text-color: white;
+$colors: (    //Mapping
+  light: white,
+  reddish: hsl($hue: 0, $saturation: 60%, $lightness: $half-percentage)
+);
 
 //Other values
-$half-percentage: 50%;
 $container-name: welcome;
 
+/* Style for container containing welcome and farewell ones */
 .start-container {
     $container-margin: 0px auto !global;    //Global variable
     
@@ -29,6 +33,7 @@ $container-name: welcome;
     transform: translateY(-$half-percentage);
 }
 
+/* Style for welcome container */
 .#{$container-name}-container {
     $container-width: 80% !global;    //Global variable
     $container-color-welcome: (#668799 + #001000); 
@@ -41,10 +46,12 @@ $container-name: welcome;
     background-color: $container-color-welcome;
 }
 
+/* Style for text inside welcome container */
 .#{$container-name}-text {
     font-size: $text-size;
 }
 
+/* Style for farewell container */
 .farewell-container { 
     $container-color-farewell: rgb(0, 49, 51);    //Local variable
     
@@ -56,20 +63,24 @@ $container-name: welcome;
     background-color: $container-color-farewell;
 }
 
+/* Style for before farewell container */
 .farewell-container:before {    //Interpolation
     $version: null; 
     $technology: SASS;
-    $text: "Feel free to play #{$technology} version #{$version} and discover.";    //Text variable with null value and interpolation
+    $text1: "Feel free to play #{$technology} version #{$version}";    //Text variable with null value and interpolation
+    $text2: " and discover.";
     
-    content: $text;
+    content: $text1 + $text2;
     font-size: $text-size;
+    font: 20px/10px Arial;
     
-    color: $light-text-color;
+    color: map-get($colors, light);
 }
 
+ /* Style for p elements in farewell container */
 .farewell-container p {
     font-family: $font-list;
     font-size: $text-size;
     
-    color: hsl($hue: 0, $saturation: 60%, $lightness: $half-percentage);    //Function
+    color: map-get($colors, reddish); 
 }
