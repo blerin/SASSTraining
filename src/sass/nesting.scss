@@ -5,28 +5,108 @@
 
 
 .row1, .row2, .row3, .row4 {
-  @import "modules/list";     //Add the style of the component 'list'
+  @import "modules/list";     //NESTED @IMPORT    //Add the style of the component 'list'
   color: $_colour2;
   background: $_colour1;
   height: $_container-height / 4 + $_container-gutter / 2;
+  cursor: pointer;
 }
+
+
 
 .row1, .row3 {            //Style of odd rows
   background: $_colour4;  
-  .list-overflow {    
+  
+  .list-overflow {        //NESTING
     color: $_colour1;
-  }
+  } 
+  
+  &:hover {               //REFERENCING PARENTAL SELECTOR
+    background: $_colour4 * 0.5;
+  }   
 }
+
+
 
 .row2, .row4 {            //Style of even rows
   background: $_colour3;
-  .list-overflow {    
-    color: $_colour2;
+  
+  .list-overflow {        //NESTING
+    color: $_colour2;   
+  }
+  
+  &:hover {               //REFERENCING PARENTAL SELECTOR
+    background: $_colour3 / 0.5;
   }
 }
 
+
+
 .row1 b {                    //First row has different style for bold text
-  font: 30px/32px fantasy {
+  font: 30px/32px fantasy {  //NESTED PROPERTIES
     weight: bold;
   }
+}
+
+
+
+
+/*-------------------------- EXERCISE --------------------*/
+
+.line1 {
+  height: 50%;
+  width: 100%;
+}
+
+
+.line2 {
+  height: 50%;
+  width: 100%;
+}
+
+
+.col1 {
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+
+.col2 {
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+.col2 {
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+
+.line1 .col1 {
+  background: $_colour3; 
+}  
+
+.line2 .col2 {
+  background: $_colour3; 
+}
+
+.line2 .col1 {
+  background: $_colour4; 
+}
+
+.line1 .col2 {
+  background: $_colour4;  
+}
+
+.col1:hover, .col2:hover {  
+  color: $_colour2;
+}
+
+.line1 .col1 i {
+  border-width: 1px;
+  border-color: $_colour1;
+  border-style: solid;
 }
