@@ -5,27 +5,27 @@
 
 
 .row1, .row2, .row3, .row4 {
-  @import "modules/list";
+  @import "modules/list";     //Add the style of the component 'list'
   color: $_colour2;
   background: $_colour1;
   height: $_container-height / 4 + $_container-gutter / 2;
 }
 
-.row1, .row3 {
+.row1, .row3 {            //Style of odd rows
   background: $_colour4;  
   .list-overflow {    
     color: $_colour1;
   }
 }
 
-.row2, .row4 {
+.row2, .row4 {            //Style of even rows
   background: $_colour3;
   .list-overflow {    
     color: $_colour2;
   }
 }
 
-.row1 b{
+.row1 b {                    //First row has different style for bold text
   font: 30px/32px fantasy {
     weight: bold;
   }
