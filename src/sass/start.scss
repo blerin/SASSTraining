@@ -67,7 +67,7 @@ $container-name: welcome;
 .farewell-container:before {    //Interpolation
     $version: null; 
     $technology: SASS;
-    $text1: "Feel free to play #{$technology} version #{$version}";    //Text variable with null value and interpolation
+    $text1: "Feel free to play #{$technology} (version: #{$version})";    //Text variable with null value and interpolation
     $text2: " and discover.";
     
     content: $text1 + $text2;

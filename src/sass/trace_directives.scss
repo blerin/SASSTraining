@@ -9,11 +9,11 @@ $rows: 3;
 
 //Row of colours vars
 $for-elements: 5;
-$reference-color: forest;  //ocean, forest, city
+$reference-color: ocean;  //ocean, forest, city
 
 
 
-
+//Style declarations
 .row {
   height: 100% / $rows;
   border-bottom: 2px solid $_colour3; 
@@ -27,6 +27,7 @@ $reference-color: forest;  //ocean, forest, city
     float: left;
     height: 100%;
 }
+
 
 
 
@@ -61,11 +62,22 @@ $virtual-cols: 0;
     $virtual-cols: $virtual-cols + $i;
 }
 
+@debug "number of divisions:" + $virtual-cols;   //DEBUG
 
 @while $element <= $max-elements {  
   .level#{$element} {
-      width: ((100 / $virtual-cols) * $element) * 1%;  
-           
+      
+      $col-width: (100 / $virtual-cols) * $element;  
+      
+      
+      @if unitless($col-width) {              
+        //@error "#{$col-width} May to be in percent";       //ERROR
+        @warn "Assuming #{$col-width} to be in percent";     //WARN
+        $col-width: 1% * $col-width;
+      }    
+
+      width: $col-width;
+      
       @if $reference-color == ocean {
         background-color: #019c7a * ($element / 10 + 0.5);
       } @else if $reference-color == forest {
