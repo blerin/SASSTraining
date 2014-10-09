@@ -4,50 +4,50 @@
    globally in our classes. */
 
 //Containers height  
-$welcomeContainerHeight: 70%*0.5;
-$farewellContainerHeight: 50%-15%;
+$welcome-container-height: 70%*0.5;
+$farewell-container-height: 50%-15%;
 
 //Font values
 $font-list : Helvetica, Arial, sans-serif; 
-$textSize: 32px; 
+$text-size: 32px; 
 
 //Colors and shapes
-$borderColor: black;
-$border: 2px solid $borderColor;
-$lightTextColor: white;
+$border-color: black;
+$border: 2px solid $border-color;
+$light-text-color: white;
 
 //Other values
 $before: before;
-$halfPercentage: 50%;
+$half-percentage: 50%;
 
 .start-container {
-    $containerMargin: 0px auto !global; //Global variable
-    margin: $containerMargin;
-    top: $halfPercentage;
+    $container-margin: 0px auto !global; //Global variable
+    margin: $container-margin;
+    top: $half-percentage;
     position: relative;
-    transform: translateY(-$halfPercentage);
+    transform: translateY(-$half-percentage);
 }
 
 .welcome-container {
-    $containerWidth: 80% !global; //Global variable
-    $containerColorWelcome: (#668799 + #001000);  
-    width: $containerWidth;
-    height: $welcomeContainerHeight;
-    margin: $containerMargin;
-    background-color: $containerColorWelcome;
+    $container-width: 80% !global; //Global variable
+    $container-color-welcome: (#668799 + #001000);  
+    width: $container-width;
+    height: $welcome-container-height;
+    margin: $container-margin;
+    background-color: $container-color-welcome;
     border: $border;
 }
 
 .welcome-text {
-    font-size: $textSize;
+    font-size: $text-size;
 }
 
 .farewell-container { 
-    $containerColorFarewell: rgb(0, 49, 51); //Local variable
-    width: $containerWidth; //Variable declarated in .welcome-container
-    height: farewellContainerHeight;
-    margin: $containerMargin; //Variable declarated in .welcome-container
-    background-color: $containerColorFarewell;
+    $container-color-farewell: rgb(0, 49, 51); //Local variable
+    width: $container-width; //Variable declarated in .welcome-container
+    height: farewell-container-height;
+    margin: $container-margin; //Variable declarated in .welcome-container
+    background-color: $container-color-farewell;
     border: $border; 
 }
 
@@ -55,12 +55,12 @@ $halfPercentage: 50%;
     $value: null; 
     $text: "Feel free to play and discover #{$value} ."; //Text variable with null value and interpolation
     content: $text;
-    font-size: $textSize;
-    color: $lightTextColor;
+    font-size: $text-size;
+    color: $light-text-color;
 }
 
 .farewell-container p {
     font-family: $font-list;
-    font-size: $textSize;
-    color: hsl($hue: 0, $saturation: 60%, $lightness: $halfPercentage); //Function
+    font-size: $text-size;
+    color: hsl($hue: 0, $saturation: 60%, $lightness: $half-percentage); //Function
 }
