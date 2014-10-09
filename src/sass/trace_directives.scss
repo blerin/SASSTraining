@@ -2,3 +2,105 @@
 @import "modules/fonts";    //Getting the data from _fonts.scss
 
 @import "partials/all";  //Getting all partials
+
+//General vars
+$rows: 3;
+
+
+//Row of colours vars
+$for-elements: 5;
+$reference-color: forest;  //ocean, forest, city
+
+
+
+
+.row {
+  height: 100% / $rows;
+  border-bottom: 2px solid $_colour3; 
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row > div {
+    float: left;
+    height: 100%;
+}
+
+
+
+//FOR DIRECTIVE
+
+@for $i from 1 through $for-elements {
+  
+  .course#{$i} {
+      width: 100% / $for-elements;  
+          
+      @if $reference-color == ocean {
+        background-color: #019c7a * ($i / 10 + 0.5);
+      } @else if $reference-color == forest {
+        background-color: #9FCAA2 * ($i / 10 + 0.5);
+      } @else {
+        background-color: #D6D29C * ($i / 10 + 0.5);
+      }
+  }  
+}
+
+
+
+
+
+
+//WHILE DIRECTIVE
+$element: 1;
+$max-elements: 6;
+$virtual-cols: 0;
+
+@for $i from 1 through $max-elements {
+    $virtual-cols: $virtual-cols + $i;
+}
+
+
+@while $element <= $max-elements {  
+  .level#{$element} {
+      width: ((100 / $virtual-cols) * $element) * 1%;  
+           
+      @if $reference-color == ocean {
+        background-color: #019c7a * ($element / 10 + 0.5);
+      } @else if $reference-color == forest {
+        background-color: #9FCAA2 * ($element / 10 + 0.5);
+      } @else {
+        background-color: #D6D29C * ($element / 10 + 0.5);
+      }
+      
+      $element: $element + 1;
+  }  
+}
+
+
+
+//EACH DIRECTIVE
+$el-group: 1;
+$n-group: 3;
+
+@each $group in "basic", "independent", "proficient" {
+  .#{$group}:before {
+    content: $group;
+   }
+   
+  .#{$group} {     
+    width: 100% / $n-group;            
+    @if $reference-color == ocean {
+        background-color: #019c7a * ($el-group / 10 + 0.5);
+      } @else if $reference-color == forest {
+        background-color: #9FCAA2 * ($el-group / 10 + 0.5);
+      } @else {
+        background-color: #D6D29C * ($el-group / 10 + 0.5);
+      }  
+      text-transform: uppercase;
+  }
+  
+  $el-group: $el-group + 1;  
+}
+
