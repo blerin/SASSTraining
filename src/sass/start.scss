@@ -23,6 +23,11 @@ $colors: (    //Mapping
 //Other values
 $container-name: welcome;
 
+.full-container {
+    background-color: rgb(1, 156, 122); 
+}
+
+
 /* Style for container containing welcome and farewell ones */
 .start-container {
     $container-margin: 0px auto !global;    //Global variable
