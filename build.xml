@@ -13,22 +13,14 @@
 	<!-- Target to build our code. This will first copy our SCSS files to a temporary folder, then compile into CCS files, and lastly
 	    copy compiled CSS files to css directory again -->
 		<target name="compass">
-			
-			<echo message="Copying temporary SCSS to ${tmp} from ${scss.input.dir}" />
-	    	
-			<delete dir="${tmp}" includeemptydirs="true" /> 
-	    	<mkdir dir="${tmp}" />
-	    	<copy todir="${tmp}/sass" overwrite="true" force="true" >
-	    		<fileset dir="${scss.input.dir}" />
-	    	</copy>
-					
+		
 			<!-- Run compass to compile all the .scss files -->
 			<!-- for windows -->
 			<echo message="Building CSS in  ${compass.bin.dir}\${exec_file}" />
 			<echo message="Building CSS in  ${tmp}" />
 			<exec executable="${compass.bin.dir}\${exec_file}" failonerror="true" osfamily="windows">
 			   	<arg value="compile" />
-			   	<arg value="${tmp}" />
+			   	<arg value="./src" />
 			</exec>
 					
 			<!-- Run compass to compile all the .scss files -->
@@ -38,15 +30,7 @@
 				<arg value="${tmp}" />
 			</exec>
 			
-			<echo message="Copying compiled CSS to ${css.output.dir} from ${tmp}/stylesheets" />
 			
-			<delete dir="${css.output.dir}" includeemptydirs="true" /> 
-			<mkdir dir="${css.output.dir}" />
-			<copy todir="${css.output.dir}" overwrite="true" force="true" >
-				<fileset dir="${tmp}/stylesheets" excludes="*.css.map" />
-			</copy>
-				   
-			<delete dir="${sass.cache}" includeemptydirs="true" />
 			
 	    </target>
 </project>

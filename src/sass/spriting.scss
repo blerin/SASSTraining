@@ -151,9 +151,14 @@ $icons-loop: url('../images/bunchs/sheet1.jpg');
 
 
 /* - SASS,  COMPASS - */
-/*@import "../images/icons/*.png";*/
-/*@include all-toolbar-sprites;*/
+@import "images/icons/*.png";
+@include all-icons-sprites;
 
+.spriting {
+  height: icons-sprite-height(icon_b) !important;
+  width: icons-sprite-width(icon_b);
+  margin: 4px;
+}
 //That's all
 /* ----------------------------- */
 
