@@ -5,10 +5,6 @@
 
 //General vars
 $rows: 3;
-
-
-//Row of colours vars
-$for-elements: 5;
 $reference-color: ocean;  //ocean, forest, city
 
 
@@ -33,17 +29,20 @@ $reference-color: ocean;  //ocean, forest, city
 
 //FOR DIRECTIVE
 
+//Row of colours vars
+$for-elements: 5;
+
 @for $i from 1 through $for-elements {
   
   .course#{$i} {
       width: 100% / $for-elements;  
           
       @if $reference-color == ocean {
-        background-color: #019c7a * ($i / 10 + 0.5);
+        background-color: $_colour-grill1 * ($i / 10 + 0.5);
       } @else if $reference-color == forest {
-        background-color: #9FCAA2 * ($i / 10 + 0.5);
+        background-color: $_colour-grill2 * ($i / 10 + 0.5);
       } @else {
-        background-color: #D6D29C * ($i / 10 + 0.5);
+        background-color: $_colour-grill3 * ($i / 10 + 0.5);
       }
   }  
 }
@@ -79,16 +78,17 @@ $virtual-cols: 0;
       width: $col-width;
       
       @if $reference-color == ocean {
-        background-color: #019c7a * ($element / 10 + 0.5);
+        background-color: $_colour-grill1 * ($element / 10 + 0.5);
       } @else if $reference-color == forest {
-        background-color: #9FCAA2 * ($element / 10 + 0.5);
+        background-color: $_colour-grill2 * ($element / 10 + 0.5);
       } @else {
-        background-color: #D6D29C * ($element / 10 + 0.5);
+        background-color: $_colour-grill3 * ($element / 10 + 0.5);
       }
       
       $element: $element + 1;
   }  
 }
+
 
 
 
@@ -104,11 +104,11 @@ $n-group: 3;
   .#{$group} {     
     width: 100% / $n-group;            
     @if $reference-color == ocean {
-        background-color: #019c7a * ($el-group / 10 + 0.5);
+        background-color: $_colour-grill1 * ($el-group / 10 + 0.5);
       } @else if $reference-color == forest {
-        background-color: #9FCAA2 * ($el-group / 10 + 0.5);
+        background-color: $_colour-grill2 * ($el-group / 10 + 0.5);
       } @else {
-        background-color: #D6D29C * ($el-group / 10 + 0.5);
+        background-color: $_colour-grill3 * ($el-group / 10 + 0.5);
       }  
       text-transform: uppercase;
   }
