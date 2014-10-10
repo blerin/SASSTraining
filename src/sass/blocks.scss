@@ -16,13 +16,13 @@ $colors: (
 
 /* Function to calculate blocks size given a width value */
 @function set-block-size($w) {
-    @return ($block-height/2)+($w);
+  @return ($block-height/2)+($w);
 }
 
 /* Placeholder for block elements */
 %block {
-    height: $block-height;
-    float: left;
+  height: $block-height;
+  float: left;
 }
 
 /* Mixin for big font properties */
@@ -48,55 +48,55 @@ $colors: (
 
 /* Style for the upper left block */
 .upper-left-block {
-    @extend %block;   //Extending from %block style
-    @include font-big;    //Including font-big style
+  @extend %block;   //Extending from %block style
+  @include font-big;    //Including font-big style
     
-    width: set-block-size(40%);   //Calling function
-    background: map-get($colors, light-background);
+  width: set-block-size(40%);   //Calling function
+  background: map-get($colors, light-background);
     
-    @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
-       color: map-get($colors, light-font);
-       background-color: map-get($colors, dark-background);
-    }
+  @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
+    color: map-get($colors, light-font);
+    background-color: map-get($colors, dark-background);
+  }
 }
 
 /* Style for the upper right block */
 .upper-right-block {
-    @extend %block;   //Extending from %block style
-    @include font-big;  //Including font-big style
-    @include linear-gradient(map-get($colors, light-background), map-get($colors, dark-background));
+  @extend %block;   //Extending from %block style
+  @include font-big;  //Including font-big style
+  @include linear-gradient(map-get($colors, light-background), map-get($colors, dark-background));
        
-    width: set-block-size(10%);   //Calling function
+  width: set-block-size(10%);   //Calling function
     
-    @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
-       color: map-get($colors, dark-font);
-       background-color: map-get($colors, light-background);
-    }   
+  @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
+    color: map-get($colors, dark-font);
+    background-color: map-get($colors, light-background);
+  }   
 }
 
 /* Style for the lower left block */
 .lower-left-block {
-   @extend .upper-right-block;    //Extending from upper right block style
-   @include linear-gradient(map-get($colors, dark-background), map-get($colors, light-background));
+  @extend .upper-right-block;    //Extending from upper right block style
+  @include linear-gradient(map-get($colors, dark-background), map-get($colors, light-background));
 }
 
 /* Style for text inside the lower left block */
 .lower-left-block-text {
-   @extend .lower-left-block;   //Extending from lower left block style
+  @extend .lower-left-block;   //Extending from lower left block style
    
-   width: 100%;   
+  width: 100%;   
 }
 
 /* Style for lower right block */
 .lower-right-block {
-    @extend %block;   //Extending from %block style
-    @include font-big;    //Including font-big style
+  @extend %block;   //Extending from %block style
+  @include font-big;    //Including font-big style
     
-    width: set-block-size(40%);   //Calling function
-    background: map-get($colors, light-background);
-    
-    @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
-       color: map-get($colors, light-font);
-       background-color: map-get($colors, dark-background);
-    }
+  width: set-block-size(40%);   //Calling function
+  background: map-get($colors, light-background);
+   
+  @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
+    color: map-get($colors, light-font);
+    background-color: map-get($colors, dark-background);
+   }
 }
