@@ -1,0 +1,59 @@
+@import "partials/all";  //Getting all partials
+
+
+@function set-notification-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $_colour1; // Lighter backgorund, return dark color
+  } @else {
+    @return $_colour2; // Darker background, return light color
+  }
+}
+
+$type-notification: (
+  confirm: $_colour-confirm,
+  warning: $_colour-warning,
+  alert: $_colour-alert
+);
+
+/* Global buttons */
+.notification {
+  border-radius: 10px;
+  display: block;
+  font-size: 1em;
+  font-family: sans-serif;
+  padding: 1em 2em;
+  margin: 1em auto;
+  width: 30%;
+  text-align: center;
+}
+
+
+
+
+/* Activated buttons */
+@each $type in confirm, warning, alert {
+  .notification-#{$type} {
+    $color: map-get($type-notification, $type);
+    background: $color;
+    color: set-notification-text-color($color);
+    &:hover{
+      background: rgba($color, 0.7);
+    }
+  }
+}
+
+
+
+
+/* Deactivated buttons */
+@each $type in confirm, warning, alert {
+  .notification-#{$type}.disabled {
+    $color: map-get($type-notification, $type);
+    background: grayscale($color);
+    color: set-notification-text-color($color);
+    &:hover{
+      background: rgba(grayscale($color), 0.7);
+    }
+  }
+}
+

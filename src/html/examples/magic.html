@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Start</title>
+		<link rel="stylesheet" href="../../css/magic.css">		
+    	<link rel="stylesheet" href="../../css/common.css"/>	
+    	
+    	<script type="text/javascript">
+    	
+    		function createPopup() {
+    			changeClass();
+    			var r = alert("bye bye shiny buttons!");
+    			changeClass();
+				
+    		};
+    		
+			function changeClass()
+			{
+				var buttons = document.getElementsByClassName("notification"); 
+				var newClass = "";
+				for (var i = 0; i < buttons.length; i++) {				
+					if(buttons[i].className.indexOf("disabled") < 1) {	 
+						newClass = buttons[i].className.replace( 'active' , 'disabled' );    
+					} else {
+						newClass = buttons[i].className.replace( 'disabled' , 'active' );    
+					}
+					buttons[i].className = newClass;
+			   }
+			};
+		</script>
+
+	</head>
+	<body>
+		<div class="full-container">
+			<p class="notification notification-confirm active" onclick="createPopup()">Confirmation</p>
+			<p class="notification notification-warning active" onclick="createPopup()">Warning</p>
+			<p class="notification notification-alert active" onclick="createPopup()">Alert</p>
+		</div>
+	</body>
+</html>

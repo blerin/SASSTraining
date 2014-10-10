@@ -2,3 +2,162 @@
 @import "modules/fonts";    //Getting the data from _fonts.scss
 
 @import "partials/all";  //Getting all partials
+
+
+//General vars
+$rows: 3;
+
+
+//Style declarations
+.row {
+  height: 100% / $rows;
+  border-bottom: 2px solid $_colour3; 
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row > div {
+    float: left;
+    height: 100%;
+}
+
+.row h4 {
+  color: $_colour4;
+}
+
+.row h3 {
+  color: $_colour3;
+}
+
+.row h2 {
+  color: black;
+}
+
+
+
+
+
+/* - SASS,  INDIVIDUAL ICONS - */
+$icon-individual-size: 75px;
+$icons: url('../images/bunchs/sheet1.jpg');
+
+.icon-individuals {
+  background-image: $icons;
+  width: $icon-individual-size;
+  height: $icon-individual-size !important;
+  margin: 1px;
+  border: 2px solid $_colour3;
+}
+
+.icon-1 {
+  background-position: -($icon-individual-size * 0) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-2 {
+  background-position: -($icon-individual-size * 1) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-3 {
+  background-position: -($icon-individual-size * 2) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-4 {
+  background-position: -($icon-individual-size * 3) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-5 {
+  background-position: -($icon-individual-size * 4) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-6 {
+  background-position: -($icon-individual-size * 5) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-7 {
+  background-position: -($icon-individual-size * 6) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-8 {
+  background-position: -($icon-individual-size * 7) (($icon-individual-size * 0)*(-1));
+}
+
+
+
+.icon-11 {
+  background-position: -($icon-individual-size * 0) (($icon-individual-size * 0)*(-1));
+}
+
+.icon-12 {
+  background-position: -($icon-individual-size * 1) (($icon-individual-size * 1)*(-1));
+}
+
+.icon-13 {
+  background-position: -($icon-individual-size * 2) (($icon-individual-size * 2)*(-1));
+}
+
+.icon-14 {
+  background-position: -($icon-individual-size * 3) (($icon-individual-size * 3)*(-1));
+}
+
+.icon-15 {
+  background-position: -($icon-individual-size * 4) (($icon-individual-size * 4)*(-1));
+}
+
+.icon-16 {
+  background-position: -($icon-individual-size * 5) (($icon-individual-size * 5)*(-1));
+}
+
+.icon-17 {
+  background-position: -($icon-individual-size * 6) (($icon-individual-size * 6)*(-1));
+}
+
+.icon-18 {
+  background-position: -($icon-individual-size * 7) (($icon-individual-size * 7)*(-1));
+}
+/* ----------------------------- */
+
+
+
+
+
+
+
+
+/* - SASS,  LOOP ICONS - */
+$icon-loop-size: 75px;
+$icons-loop: url('../images/bunchs/sheet1.jpg');
+
+
+.icon-loop {
+  background-image: $icons-loop;
+  width: $icon-loop-size;
+  height: $icon-loop-size !important;
+  margin: 1px;
+  border: 2px solid $_colour3;
+}
+ 
+@for $f from 0 through 1 {
+  @for $i from 0 through 7 {
+    .icon-row-#{$f+1}-col-#{$i+1} {
+      background-position: -($icon-loop-size * $i) (($icon-loop-size * $f)*(-1));
+    }
+  }
+}
+/* ----------------------------- */
+
+
+
+
+/* - SASS,  COMPASS - */
+/*@import "../images/icons/*.png";*/
+/*@include all-toolbar-sprites;*/
+
+//That's all
+/* ----------------------------- */
+
+
+
+
+
