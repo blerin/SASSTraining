@@ -1,60 +1,52 @@
-<project basedir="." default="sass">
+<project basedir="." default="compass">
 	<!-- properties -->
-	<property name="sass.bin.dir" location="c:/Ruby193/bin" />
-	<property name="sass.cache" location="./.sass.cache" />
-	<property name="sass.input.dir" location="./src/sass" />
-	<property name="sass.output.dir" location="./src/css" />
-    <condition property="exec_file" value="sass.bat" else="sass" >
-    	  <os family="windows" />
-    </condition>
-    <property name="sass.cache" location="./sass.cache" />
+	<property name="compass.bin.dir" location="c:/Ruby193/bin" />
+	<property name="scss.input.dir" location="./src/sass" />
+	<property name="css.output.dir" location="./src/css" />
+	<property name="sass.cache" location=".sass-cache" />
 	<property name="tmp" location="${java.io.tmpdir}/ant-temp" />
+	
+ 	<condition property="exec_file" value="compass.bat" else="compass" >
+	    <os family="windows" />
+	</condition>
    
-    <!-- Target to build our code. This will first copy our CSS files to a temporary folder, then compile SCCS files into it, and lastly
-    copy compiled CSS files to css directory again -->
-	<target name="sass">
-    	
-    			<delete dir="${tmp}" includeemptydirs="true" /> 
-    			<mkdir dir="${tmp}" />
-    			<copy todir="${tmp}" overwrite="true" force="true" >
-    				<fileset dir="${sass.output.dir}" includes="*.scss" />
-    			</copy>
-    	
-    			<!-- for windows -->
-    			<echo message="Building CSS in  ${sass.bin.dir}\${exec_file}" />
-    			<exec executable="${sass.bin.dir}\${exec_file}" dir="${sass.bin.dir}" failonerror="true" osfamily="windows">
-    				<arg value="--trace" />
-    				<arg value="--line-comments" />
-    				<arg value="--debug-info" />
-    				<arg value="--scss" />
-    				<arg value="--cache-location" />
-    				<arg value="${sass.cache}/" />
-    				<arg value="--style" />
-    				<arg value="${sass.output.dir}" />
-    				<arg value="--update" />
-    				<arg value="${sass.input.dir}:${tmp}" />
-    			</exec>
-		
-				<!-- Run sass to compile all the .scss files -->
-				<!-- for UNIX (e.g. on Jenkins server) -->
-				<exec executable="sass" failonerror="true" osfamily="unix">
-					<arg value="--trace" />
-					<arg value="--line-comments" />
-					<arg value="--debug-info" />
-					<arg value="--scss" />
-					<arg value="--cache-location" />
-					<arg value="${sass.cache}/" />
-					<arg value="--style" />
-					<arg value="${sass.output.dir}" />
-					<arg value="--update" />
-					<arg value="${sass.input.dir}:${tmp}" />
-				</exec>
-    			
-    			<echo message="Copying temporary CSS to ${sass.output.dir} from ${tmp}" />
-				<delete dir="${sass.output.dir}" includeemptydirs="true" /> 
-		    	<mkdir dir="${sass.output.dir}" />
-    			<copy todir="${sass.output.dir}" overwrite="true" force="true" >
-    	    		<fileset dir="${tmp}" excludes="*.css.map" />
-    	    	</copy>
-    </target>
+	<!-- Target to build our code. This will first copy our SCSS files to a temporary folder, then compile into CCS files, and lastly
+	    copy compiled CSS files to css directory again -->
+		<target name="compass">
+			
+			<echo message="Copying temporary SCSS to ${tmp} from ${scss.input.dir}" />
+	    	
+			<delete dir="${tmp}" includeemptydirs="true" /> 
+	    	<mkdir dir="${tmp}" />
+	    	<copy todir="${tmp}/sass" overwrite="true" force="true" >
+	    		<fileset dir="${scss.input.dir}" />
+	    	</copy>
+					
+			<!-- Run compass to compile all the .scss files -->
+			<!-- for windows -->
+			<echo message="Building CSS in  ${compass.bin.dir}\${exec_file}" />
+			<echo message="Building CSS in  ${tmp}" />
+			<exec executable="${compass.bin.dir}\${exec_file}" failonerror="true" osfamily="windows">
+			   	<arg value="compile" />
+			   	<arg value="${tmp}" />
+			</exec>
+					
+			<!-- Run compass to compile all the .scss files -->
+			<!-- for UNIX (e.g. on Jenkins server) -->
+			<exec executable="compass" failonerror="true" osfamily="unix">
+				<arg value="compile" />
+				<arg value="${tmp}" />
+			</exec>
+			
+			<echo message="Copying compiled CSS to ${css.output.dir} from ${tmp}/stylesheets" />
+			
+			<delete dir="${css.output.dir}" includeemptydirs="true" /> 
+			<mkdir dir="${css.output.dir}" />
+			<copy todir="${css.output.dir}" overwrite="true" force="true" >
+				<fileset dir="${tmp}/stylesheets" excludes="*.css.map" />
+			</copy>
+				   
+			<delete dir="${sass.cache}" includeemptydirs="true" />
+			
+	    </target>
 </project>
