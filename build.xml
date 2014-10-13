@@ -14,6 +14,9 @@
 	    copy compiled CSS files to css directory again -->
 		<target name="compass">
 		
+			<delete dir="${css.output.dir}" includeemptydirs="true" /> 
+			<mkdir dir="${css.output.dir}" />
+			
 			<!-- Run compass to compile all the .scss files -->
 			<!-- for windows -->
 			<echo message="Building CSS in  ${compass.bin.dir}\${exec_file}" />
