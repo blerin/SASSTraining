@@ -61,7 +61,7 @@ $virtual-cols: 0;
     $virtual-cols: $virtual-cols + $i;
 }
 
-@debug "number of divisions:" + $virtual-cols;   //DEBUG
+//@debug "number of divisions:" + $virtual-cols;   //DEBUG
 
 @while $element <= $max-elements {  
   .level#{$element} {
@@ -71,7 +71,7 @@ $virtual-cols: 0;
       
       @if unitless($col-width) {              
         //@error "#{$col-width} May to be in percent";       //ERROR
-        @warn "Assuming #{$col-width} to be in percent";     //WARN
+        //@warn "Assuming #{$col-width} to be in percent";     //WARN
         $col-width: 1% * $col-width;
       }    
 

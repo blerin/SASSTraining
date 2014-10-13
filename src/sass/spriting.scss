@@ -154,10 +154,11 @@ $icons-loop: url('../images/bunchs/sheet1.jpg');
 @import "images/icons/*.png";
 @include all-icons-sprites;
 
-.spriting {
+.icon {
   height: icons-sprite-height(icon_b) !important;
   width: icons-sprite-width(icon_b);
-  margin: 4px;
+  margin: 1px;
+  border: 2px solid $_colour3;
 }
 //That's all
 /* ----------------------------- */
