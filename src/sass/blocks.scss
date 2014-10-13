@@ -1,8 +1,7 @@
 @import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
 
-/* Variables */
-
+//Variables
 $block-height: 50%;
 
 $colors: (
@@ -14,18 +13,19 @@ $colors: (
 
 $font-big-weight: bold;
 
-/* Function to calculate blocks size given a width value */
+//Function to calculate blocks size given a width value
+
 @function set-block-size($w) {
   @return ($block-height/2)+($w);
 }
 
-/* Placeholder for block elements */
+//Placeholder for block elements 
 %block {
   height: $block-height;
   float: left;
 }
 
-/* Mixin for big font properties */
+// Mixin for big font properties 
 @mixin font-big($font-big-weight: normal) {
   font: {
     family: $_font1;
@@ -35,7 +35,7 @@ $font-big-weight: bold;
   @content;
 }
 
-/* Mixin to apply a gradient */
+// Mixin to apply a gradient 
 @mixin linear-gradient($fromColor, $toColor) {
   background-color: $toColor; 
   background-image: -webkit-gradient(linear, left top, right top, from($fromColor), to($toColor)); 
@@ -47,7 +47,7 @@ $font-big-weight: bold;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
-/* Style for the upper left block */
+// Style for the upper left block 
 .upper-left-block {
   @extend %block;   //Extending from %block style
   @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
@@ -61,7 +61,7 @@ $font-big-weight: bold;
   }
 }
 
-/* Style for the upper right block */
+// Style for the upper right block 
 .upper-right-block {
   @extend %block;   //Extending from %block style
   @include font-big;  //Including font-big style
@@ -75,19 +75,19 @@ $font-big-weight: bold;
   }   
 }
 
-/* Style for the lower left block */
+// Style for the lower left block 
 .lower-left-block {
   @extend .upper-right-block;    //Extending from upper right block style
   @include linear-gradient(map-get($colors, dark-background), map-get($colors, light-background));
 }
 
-/* Style for text inside the lower left block */
+// Style for text inside the lower left block 
 .lower-left-block-text {
   @extend .lower-left-block;   //Extending from lower left block style   
   width: 100%;   
 }
 
-/* Style for lower right block */
+// Style for lower right block 
 .lower-right-block {
   @extend %block;   //Extending from %block style
   @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
@@ -99,4 +99,50 @@ $font-big-weight: bold;
     color: map-get($colors, light-font);
     background-color: map-get($colors, dark-background);
    }
+} 
+
+
+///////////////////////////////////////////// EXERCISE STYLE /////////////////////////////////////
+
+
+
+
+.block1 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 1px solid $_colour1;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
+}
+
+.block2 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 1px solid $_colour1;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
+}
+
+.block3 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 1px solid $_colour1;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+}
+
+.block4 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 1px solid $_colour1;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
 }
