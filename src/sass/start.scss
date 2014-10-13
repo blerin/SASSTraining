@@ -52,7 +52,7 @@ $container-name: welcome;
 }
 
 /* Style for text inside welcome container */
-.#{$container-name}-text {
+.container-text {
     font-size: $text-size;
 }
 
