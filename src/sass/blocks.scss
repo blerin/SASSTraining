@@ -8,10 +8,10 @@
 $block-height: 50%;
 
 $colors: (
-  light-background: rgb(102, 151, 153),
-  dark-background: rgb(0, 49, 51),
-  light-font: rgb(255, 255, 255),
-  dark-font:  rgb(0, 0, 0)
+  light-background: $_colour4,
+  dark-background: $_colour3,
+  light-font: $_colour2,
+  dark-font:  $_colour1
 );
 
 /* Function to calculate blocks size given a width value */
@@ -28,8 +28,8 @@ $colors: (
 /* Mixin for big font properties */
 @mixin font-big {
   font: {
-    family: Arial;
-    size: 40px;
+    family: $_font1;
+    size: $_font-extra-big;
     weight: bold;
   }
 }
