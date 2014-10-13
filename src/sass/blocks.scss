@@ -32,6 +32,7 @@ $font-big-weight: bold;
     size: $_font-extra-big;
     weight: $font-big-weight;
   }
+  
   @content;
 }
 
@@ -50,10 +51,11 @@ $font-big-weight: bold;
 // Style for the upper left block 
 .upper-left-block {
   @extend %block;   //Extending from %block style
-  @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
     
   width: set-block-size(40%);   //Calling function
   background: map-get($colors, light-background);
+  
+  @include font-big{ font-weight: $font-big-weight; };    //Including font-big style  
     
   @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
     color: map-get($colors, light-font);
@@ -64,10 +66,11 @@ $font-big-weight: bold;
 // Style for the upper right block 
 .upper-right-block {
   @extend %block;   //Extending from %block style
+         
+  width: set-block-size(10%);   //Calling function
+  
   @include font-big;  //Including font-big style
   @include linear-gradient(map-get($colors, light-background), map-get($colors, dark-background));
-       
-  width: set-block-size(10%);   //Calling function
     
   @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
     color: map-get($colors, dark-font);
@@ -90,11 +93,12 @@ $font-big-weight: bold;
 // Style for lower right block 
 .lower-right-block {
   @extend %block;   //Extending from %block style
-  @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
-    
+     
   width: set-block-size(40%);   //Calling function
   background: map-get($colors, light-background);
    
+  @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
+  
   @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
     color: map-get($colors, light-font);
     background-color: map-get($colors, dark-background);
@@ -103,9 +107,6 @@ $font-big-weight: bold;
 
 
 ///////////////////////////////////////////// EXERCISE STYLE /////////////////////////////////////
-
-
-
 
 .block1 {
     width: 50%;
