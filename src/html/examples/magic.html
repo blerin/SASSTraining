@@ -7,34 +7,32 @@
     	
     	<script type="text/javascript">
     	
-    		function createPopup() {
-    			changeClass();
-    			var r = alert("bye bye shiny buttons!");
-    			changeClass();
+    		function createPopup(button) {
+    			changeClass(button);
+    			var r = alert("bye bye shiny button!");
+    			changeClass(button);
 				
     		};
     		
-			function changeClass()
+			function changeClass(button)
 			{
-				var buttons = document.getElementsByClassName("notification"); 
-				var newClass = "";
-				for (var i = 0; i < buttons.length; i++) {				
-					if(buttons[i].className.indexOf("disabled") < 1) {	 
-						newClass = buttons[i].className.replace( 'active' , 'disabled' );    
-					} else {
-						newClass = buttons[i].className.replace( 'disabled' , 'active' );    
-					}
-					buttons[i].className = newClass;
-			   }
+				var newClass = "";			
+				if(button.className.indexOf("disabled") < 1) {	 
+					newClass = button.className.replace( 'active' , 'disabled' );    
+				} else {
+					newClass = button.className.replace( 'disabled' , 'active' );    
+				}
+				button.className = newClass;
+			   
 			};
 		</script>
 
 	</head>
 	<body>
 		<div class="full-container">
-			<p class="notification notification-confirm active" onclick="createPopup()">Confirmation</p>
-			<p class="notification notification-warning active" onclick="createPopup()">Warning</p>
-			<p class="notification notification-alert active" onclick="createPopup()">Alert</p>
+			<p class="notification notification-confirm active" onclick="createPopup(this)">Confirmation</p>
+			<p class="notification notification-warning active" onclick="createPopup(this)">Warning</p>
+			<p class="notification notification-alert active" onclick="createPopup(this)">Alert</p>
 		</div>
 	</body>
 </html>

@@ -8,7 +8,7 @@
 $rows: 3;
 
 
-//Style declarations
+//General style declarations
 .row {
   height: 100% / $rows;
   border-bottom: 2px solid $_colour3; 
@@ -21,6 +21,7 @@ $rows: 3;
 .row > div {
     float: left;
     height: 100%;
+    margin: 1px;
 }
 
 .row h4 {
@@ -35,6 +36,17 @@ $rows: 3;
   color: black;
 }
 
+//Change the common container
+.full-container {
+  $_container-width: 1153px;
+  width: $_container-width + ($_container-gutter * 4);
+  /* Center the elements */
+  $half-width-container: $_container-width / 2 + $_container-gutter * 3;
+  left: calc(50% - #{$half-width-container});      
+  left: -webkit-calc(50 - #{$half-width-container});  
+  left: -moz-calc(50% - #{$half-width-container});  
+}
+
 
 
 
@@ -47,8 +59,6 @@ $icons: url('../images/bunchs/sheet1.jpg');
   background-image: $icons;
   width: $icon-individual-size;
   height: $icon-individual-size !important;
-  margin: 1px;
-  border: 2px solid $_colour3;
 }
 
 .icon-1 {
@@ -86,7 +96,7 @@ $icons: url('../images/bunchs/sheet1.jpg');
 
 
 .icon-11 {
-  background-position: -($icon-individual-size * 0) (($icon-individual-size * 0)*(-1));
+  background-position: -($icon-individual-size * 0) (($icon-individual-size * 1)*(-1));
 }
 
 .icon-12 {
@@ -94,27 +104,27 @@ $icons: url('../images/bunchs/sheet1.jpg');
 }
 
 .icon-13 {
-  background-position: -($icon-individual-size * 2) (($icon-individual-size * 2)*(-1));
+  background-position: -($icon-individual-size * 2) (($icon-individual-size * 1)*(-1));
 }
 
 .icon-14 {
-  background-position: -($icon-individual-size * 3) (($icon-individual-size * 3)*(-1));
+  background-position: -($icon-individual-size * 3) (($icon-individual-size * 1)*(-1));
 }
 
 .icon-15 {
-  background-position: -($icon-individual-size * 4) (($icon-individual-size * 4)*(-1));
+  background-position: -($icon-individual-size * 4) (($icon-individual-size * 1)*(-1));
 }
 
 .icon-16 {
-  background-position: -($icon-individual-size * 5) (($icon-individual-size * 5)*(-1));
+  background-position: -($icon-individual-size * 5) (($icon-individual-size * 1)*(-1));
 }
 
 .icon-17 {
-  background-position: -($icon-individual-size * 6) (($icon-individual-size * 6)*(-1));
+  background-position: -($icon-individual-size * 6) (($icon-individual-size * 1)*(-1));
 }
 
 .icon-18 {
-  background-position: -($icon-individual-size * 7) (($icon-individual-size * 7)*(-1));
+  background-position: -($icon-individual-size * 7) (($icon-individual-size * 1)*(-1));
 }
 /* ----------------------------- */
 
@@ -129,13 +139,10 @@ $icons: url('../images/bunchs/sheet1.jpg');
 $icon-loop-size: 75px;
 $icons-loop: url('../images/bunchs/sheet1.jpg');
 
-
 .icon-loop {
   background-image: $icons-loop;
   width: $icon-loop-size;
   height: $icon-loop-size !important;
-  margin: 1px;
-  border: 2px solid $_colour3;
 }
  
 @for $f from 0 through 1 {
@@ -150,6 +157,8 @@ $icons-loop: url('../images/bunchs/sheet1.jpg');
 
 
 
+
+
 /* - SASS,  COMPASS - */
 @import "images/icons/*.png";
 @include all-icons-sprites;
@@ -157,8 +166,6 @@ $icons-loop: url('../images/bunchs/sheet1.jpg');
 .icon {
   height: icons-sprite-height(icon_b) !important;
   width: icons-sprite-width(icon_b);
-  margin: 1px;
-  border: 2px solid $_colour3;
 }
 //That's all
 /* ----------------------------- */
