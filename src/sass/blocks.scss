@@ -14,7 +14,7 @@ $colors: (
   dark-font:  $_colour1
 );
 
-$font-big-style: italic;
+$font-big-weight: bold;
 
 /* Function to calculate blocks size given a width value */
 @function set-block-size($w) {
@@ -28,11 +28,11 @@ $font-big-style: italic;
 }
 
 /* Mixin for big font properties */
-@mixin font-big {
+@mixin font-big($font-big-weight: normal) {
   font: {
     family: $_font1;
     size: $_font-extra-big;
-    weight: bold;
+    weight: $font-big-weight;
   }
   @content;
 }
@@ -52,7 +52,7 @@ $font-big-style: italic;
 /* Style for the upper left block */
 .upper-left-block {
   @extend %block;   //Extending from %block style
-  @include font-big{ font-style: $font-big-style; };    //Including font-big style
+  @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
     
   width: set-block-size(40%);   //Calling function
   background: map-get($colors, light-background);
@@ -93,7 +93,7 @@ $font-big-style: italic;
 /* Style for lower right block */
 .lower-right-block {
   @extend %block;   //Extending from %block style
-  @include font-big{ font-style: $font-big-style; };    //Including font-big style
+  @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
     
   width: set-block-size(40%);   //Calling function
   background: map-get($colors, light-background);
