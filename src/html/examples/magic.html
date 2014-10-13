@@ -5,15 +5,13 @@
 		<link rel="stylesheet" href="../../css/magic.css">		
     	<link rel="stylesheet" href="../../css/common.css"/>	
     	
-    	<script type="text/javascript">
-    	
+    	<script type="text/javascript">    	
     		function createPopup(button) {
     			changeClass(button);
     			var r = alert("bye bye shiny button!");
     			changeClass(button);
 				
-    		};
-    		
+    		};    		
 			function changeClass(button)
 			{
 				var newClass = "";			
@@ -22,11 +20,9 @@
 				} else {
 					newClass = button.className.replace( 'disabled' , 'active' );    
 				}
-				button.className = newClass;
-			   
+				button.className = newClass;			   
 			};
 		</script>
-
 	</head>
 	<body>
 		<div class="full-container">

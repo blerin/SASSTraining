@@ -1,6 +1,4 @@
-@import "modules/colours";  //Getting the data from _colours.scss
-@import "modules/fonts";    //Getting the data from _fonts.scss
-
+@import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
 
 /* Variables */
@@ -85,8 +83,7 @@ $font-big-weight: bold;
 
 /* Style for text inside the lower left block */
 .lower-left-block-text {
-  @extend .lower-left-block;   //Extending from lower left block style
-   
+  @extend .lower-left-block;   //Extending from lower left block style   
   width: 100%;   
 }
 

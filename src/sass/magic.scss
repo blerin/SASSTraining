@@ -1,8 +1,9 @@
+@import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
 
 
 
-
+//Border for all vendors
 @mixin border-radius($radius: 10px) {
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
@@ -12,7 +13,7 @@
 
 
 
-@function set-notification-text-color($color) {
+@function set-notification-text-color($color) {   //Set the color of the text in order to be visible 
   @if (lightness($color) > 50) {
     @return $_colour1; // Lighter backgorund, return dark color
   } @else {
@@ -21,10 +22,9 @@
 }
 
 
-
-
+/* Changes the properties of the global container) */ 
 .full-container {
-  @if (variable-exists(_colour14)) {
+  @if (variable-exists(_colour14)) {    //If the colour14 doesn't exist, generate a mixed colour
     background-color: $_colour14;
   } @else {
     background-color: mix($_colour4, $_colour5);
@@ -35,7 +35,7 @@
 
 
 
-
+/*Colours of each button*/
 $type-notification: (
   confirm: $_colour-confirm,
   warning: $_colour-warning,
@@ -44,8 +44,7 @@ $type-notification: (
 
 
 /* Global buttons */
-.notification {
-  @include border-radius;
+.notification {  
   display: block;
   font-size: 1em;
   font-family: sans-serif;
@@ -53,6 +52,7 @@ $type-notification: (
   margin: 3em auto 1em;
   width: 30%;
   text-align: center;
+  @include border-radius;
 }
 
 

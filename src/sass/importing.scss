@@ -1,8 +1,5 @@
-@import "modules/colours";  //Getting the data from _colours.scss
-@import "modules/fonts";    //Getting the data from _fonts.scss
-
+@import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
-
 
 /* Common style for containers */
 .importing-container {

@@ -1,7 +1,6 @@
-@import "modules/colours";  //Getting the data from _colours.scss
-@import "modules/fonts";    //Getting the data from _fonts.scss
-
+@import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
+
 
 //General vars
 $rows: 3;
@@ -20,8 +19,8 @@ $reference-color: ocean;  //ocean, forest, city
 }
 
 .row > div {
-    float: left;
-    height: 100%;
+  float: left;
+  height: 100%;
 }
 
 
@@ -32,8 +31,7 @@ $reference-color: ocean;  //ocean, forest, city
 //Row of colours vars
 $for-elements: 5;
 
-@for $i from 1 through $for-elements {
-  
+@for $i from 1 through $for-elements {  
   .course#{$i} {
       width: 100% / $for-elements;  
           
@@ -66,28 +64,28 @@ $virtual-cols: 0;
 @while $element <= $max-elements {  
   .level#{$element} {
       
-      $col-width: (100 / $virtual-cols) * $element;  
+    $col-width: (100 / $virtual-cols) * $element;        
       
-      
-      @if unitless($col-width) {              
-        //@error "#{$col-width} May to be in percent";       //ERROR
-        //@warn "Assuming #{$col-width} to be in percent";     //WARN
-        $col-width: 1% * $col-width;
-      }    
+    @if unitless($col-width) {              
+      //@error "#{$col-width} May to be in percent";       //ERROR
+      //@warn "Assuming #{$col-width} to be in percent";     //WARN
+      $col-width: 1% * $col-width;
+    }    
 
-      width: $col-width;
+    width: $col-width;
       
-      @if $reference-color == ocean {
-        background-color: $_colour-grill1 * ($element / 10 + 0.5);
-      } @else if $reference-color == forest {
-        background-color: $_colour-grill2 * ($element / 10 + 0.5);
-      } @else {
-        background-color: $_colour-grill3 * ($element / 10 + 0.5);
-      }
+    @if $reference-color == ocean {
+      background-color: $_colour-grill1 * ($element / 10 + 0.5);
+    } @else if $reference-color == forest {
+      background-color: $_colour-grill2 * ($element / 10 + 0.5);
+    } @else {
+      background-color: $_colour-grill3 * ($element / 10 + 0.5);
+    }
       
-      $element: $element + 1;
+    $element: $element + 1;
   }  
 }
+
 
 
 

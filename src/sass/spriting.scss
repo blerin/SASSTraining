@@ -1,6 +1,4 @@
-@import "modules/colours";  //Getting the data from _colours.scss
-@import "modules/fonts";    //Getting the data from _fonts.scss
-
+@import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
 
 
@@ -40,6 +38,7 @@ $rows: 3;
 .full-container {
   $_container-width: 1153px;
   width: $_container-width + ($_container-gutter * 4);
+  
   /* Center the elements */
   $half-width-container: $_container-width / 2 + $_container-gutter * 3;
   left: calc(50% - #{$half-width-container});      
@@ -53,7 +52,7 @@ $rows: 3;
 
 /* - SASS,  INDIVIDUAL ICONS - */
 $icon-individual-size: 75px;
-$icons: url('../images/bunchs/sheet1.jpg');
+$icons: $_path-icons-bunch;
 
 .icon-individuals {
   background-image: $icons;
@@ -137,7 +136,7 @@ $icons: url('../images/bunchs/sheet1.jpg');
 
 /* - SASS,  LOOP ICONS - */
 $icon-loop-size: 75px;
-$icons-loop: url('../images/bunchs/sheet1.jpg');
+$icons-loop: $_path-icons-bunch;
 
 .icon-loop {
   background-image: $icons-loop;

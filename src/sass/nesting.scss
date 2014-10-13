@@ -1,15 +1,13 @@
-@import "modules/colours";  //Getting the data from _colours.scss
-@import "modules/fonts";    //Getting the data from _fonts.scss
-
+@import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
 
 
-.row1, .row2, .row3, .row4 {
-  @import "modules/list";     //NESTED @IMPORT    //Add the style of the component 'list'
+.row1, .row2, .row3, .row4 {  
   color: $_colour2;
   background: $_colour1;
   height: $_container-height / 4 + $_container-gutter / 2;
   cursor: pointer;
+  @import "modules/list";     //NESTED @IMPORT    //Add the style of the component 'list'
 }
 
 
@@ -47,6 +45,10 @@
     weight: bold;
   }
 }
+
+
+
+
 
 
 
