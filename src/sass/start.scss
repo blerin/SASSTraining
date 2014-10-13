@@ -22,7 +22,7 @@ $colors: (    //Mapping
 
 //Other values
 $container-name: welcome;
-$version: null;
+$version: null;     //Null variable
 
 .full-container {
     background-color: rgb(1, 156, 122); 
@@ -41,7 +41,7 @@ $version: null;
 
 /* Style for welcome container */
 .#{$container-name}-container {
-    $welcome-container-height: 40% !default;
+    $welcome-container-height: 40% !default;    //Default value. As it is already initialized, its value won't be changed to 40%
     $container-width: 80% !global;    //Global variable
     $container-color-welcome: (#668799 + #001000); 
      
@@ -72,8 +72,7 @@ $version: null;
 
 /* Style for before farewell container */
 .farewell-container:before {    //Interpolation
-    $version: "3.4.5. " !default;
-     
+    $version: "3.4.5. " !default;   //Default variable. As it is not initialized, it will take value 3.4.5
     $technology: SASS;
     $text1: "Feel free to play #{$technology} (version: #{$version})";    //Text variable with null value and interpolation
     $text2: " and discover.";
