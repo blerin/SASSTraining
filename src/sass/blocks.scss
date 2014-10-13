@@ -14,6 +14,8 @@ $colors: (
   dark-font:  $_colour1
 );
 
+$font-big-style: italic;
+
 /* Function to calculate blocks size given a width value */
 @function set-block-size($w) {
   @return ($block-height/2)+($w);
@@ -32,6 +34,7 @@ $colors: (
     size: $_font-extra-big;
     weight: bold;
   }
+  @content;
 }
 
 /* Mixin to apply a gradient */
@@ -49,7 +52,7 @@ $colors: (
 /* Style for the upper left block */
 .upper-left-block {
   @extend %block;   //Extending from %block style
-  @include font-big;    //Including font-big style
+  @include font-big{ font-style: $font-big-style; };    //Including font-big style
     
   width: set-block-size(40%);   //Calling function
   background: map-get($colors, light-background);
@@ -90,7 +93,7 @@ $colors: (
 /* Style for lower right block */
 .lower-right-block {
   @extend %block;   //Extending from %block style
-  @include font-big;    //Including font-big style
+  @include font-big{ font-style: $font-big-style; };    //Including font-big style
     
   width: set-block-size(40%);   //Calling function
   background: map-get($colors, light-background);
