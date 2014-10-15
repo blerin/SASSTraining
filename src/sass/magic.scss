@@ -1,3 +1,5 @@
+//@import "sassy-buttons";
+
 @import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
 
@@ -49,7 +51,7 @@ $type-notification: (
   font-size: 1em;
   font-family: sans-serif;
   padding: 1em 2em;
-  margin: 3em auto 1em;
+  margin: 1em auto 1em;
   width: 30%;
   text-align: center;
   @include border-radius;
@@ -73,6 +75,8 @@ $type-notification: (
 
 
 
+
+
 /* Deactivated buttons */
 @each $type in confirm, warning, alert {
   .notification-#{$type}.disabled {
@@ -86,3 +90,64 @@ $type-notification: (
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------------------------------------------
+/*
+button {
+  height: 45px;
+  width: 120px;
+  @include border-radius;
+  color: black !important;
+}
+
+
+.sassy1 {
+  @include sassy-button-gradient("matte", #4ba3cc);
+}
+
+.sassy2 {
+  @include sassy-button-gradient("simple", #e86a43);
+}
+
+.sassy3 {
+  @include sassy-button-gradient("glass", #8cbe5f);
+}
+
+.sassy4 {
+  @include sassy-button("shiny", 5px, 19px, orange); 
+  @include sassy-button-style("push", orange);
+}
+*/
