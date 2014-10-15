@@ -33,15 +33,15 @@ $for-elements: 5;
 
 @for $i from 1 through $for-elements {  
   .course#{$i} {
-      width: 100% / $for-elements;  
+    width: 100% / $for-elements;  
           
-      @if $reference-color == ocean {
-        background-color: $_colour-grill1 * ($i / 10 + 0.5);
-      } @else if $reference-color == forest {
-        background-color: $_colour-grill2 * ($i / 10 + 0.5);
-      } @else {
-        background-color: $_colour-grill3 * ($i / 10 + 0.5);
-      }
+    @if $reference-color == ocean {
+      background-color: $_colour-grill1 * ($i / 10 + 0.5);
+    } @else if $reference-color == forest {
+      background-color: $_colour-grill2 * ($i / 10 + 0.5);
+    } @else {
+      background-color: $_colour-grill3 * ($i / 10 + 0.5);  
+    }
   }  
 }
 
@@ -102,13 +102,13 @@ $n-group: 3;
   .#{$group} {     
     width: 100% / $n-group;            
     @if $reference-color == ocean {
-        background-color: $_colour-grill1 * ($el-group / 10 + 0.5);
-      } @else if $reference-color == forest {
-        background-color: $_colour-grill2 * ($el-group / 10 + 0.5);
-      } @else {
-        background-color: $_colour-grill3 * ($el-group / 10 + 0.5);
-      }  
-      text-transform: uppercase;
+      background-color: $_colour-grill1 * ($el-group / 10 + 0.5);
+    } @else if $reference-color == forest {
+      background-color: $_colour-grill2 * ($el-group / 10 + 0.5);
+    } @else {
+      background-color: $_colour-grill3 * ($el-group / 10 + 0.5);
+    }  
+    text-transform: uppercase;
   }
   
   $el-group: $el-group + 1;  
