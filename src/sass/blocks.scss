@@ -13,17 +13,15 @@ $colors: (
 
 $font-big-weight: bold;
 
-//Function to calculate blocks size given a width value
 
+
+
+//Function to calculate blocks size given a width value
 @function set-block-size($w) {
   @return ($block-height/2)+($w);
 }
 
-//Placeholder for block elements 
-%block {
-  height: $block-height;
-  float: left;
-}
+
 
 // Mixin for big font properties 
 @mixin font-big($font-big-weight: normal) {
@@ -31,10 +29,11 @@ $font-big-weight: bold;
     family: $_font1;
     size: $_font-extra-big;
     weight: $font-big-weight;
-  }
-  
+  }  
   @content;
 }
+
+
 
 // Mixin to apply a gradient 
 @mixin linear-gradient($fromColor, $toColor) {
@@ -48,6 +47,18 @@ $font-big-weight: bold;
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
+
+
+
+//Placeholder for block elements 
+%block {
+  height: $block-height;
+  float: left;
+}
+
+
+
+
 // Style for the upper left block 
 .upper-left-block {
   @extend %block;   //Extending from %block style
@@ -57,11 +68,14 @@ $font-big-weight: bold;
   
   @include font-big{ font-weight: $font-big-weight; };    //Including font-big style  
     
-  @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
+  @media screen and (max-width: 1040px) {   //Only applied if screen is smaller than X px (width)
     color: map-get($colors, light-font);
     background-color: map-get($colors, dark-background);
   }
 }
+
+
+
 
 // Style for the upper right block 
 .upper-right-block {
@@ -72,11 +86,13 @@ $font-big-weight: bold;
   @include font-big;  //Including font-big style
   @include linear-gradient(map-get($colors, light-background), map-get($colors, dark-background));
     
-  @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
+  @media screen and (max-width: 1040px) {   //Only applied if screen is smaller than X px (width)
     color: map-get($colors, dark-font);
     background-color: map-get($colors, light-background);
   }   
 }
+
+
 
 // Style for the lower left block 
 .lower-left-block {
@@ -84,11 +100,15 @@ $font-big-weight: bold;
   @include linear-gradient(map-get($colors, dark-background), map-get($colors, light-background));
 }
 
+
+
 // Style for text inside the lower left block 
 .lower-left-block-text {
   @extend .lower-left-block;   //Extending from lower left block style   
   width: 100%;   
 }
+
+
 
 // Style for lower right block 
 .lower-right-block {
@@ -99,7 +119,7 @@ $font-big-weight: bold;
    
   @include font-big{ font-weight: $font-big-weight; };    //Including font-big style
   
-  @media screen and (orientation: portrait) {   //Only applied if screen is in vertical mode
+  @media screen and (max-width: 1040px) {   //Only applied if screen is smaller than X px (width)
     color: map-get($colors, light-font);
     background-color: map-get($colors, dark-background);
    }
