@@ -2,6 +2,19 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../../css/_not_sass/not_for_training.css"/>	
+		<script type='text/javascript'>
+			function KeyPress(e){
+	     		// Ensure event is not null
+	     		e = e || window.event;
+	     		
+	     		if ((e.which == 241 || e.keyCode == 241) && e.ctrlKey) {
+	         		// Ctrl + ñ
+	         		document.getElementById("lastLi").style.display="inline";
+	     		}
+			}
+			document.onkeypress = KeyPress;
+        </script>
+        
 		<title>Menu</title>
 	</head>
 	<body>
@@ -28,7 +41,7 @@
 				<li>
 					<a href='../examples/magic.html' target="bodyFrame">Magic</a>
 				</li> 		
-				<li>|	
+				<li id="lastLi" style='display:none;'>|	
 					<a href='../examples/dont.html' target="bodyFrame" >Don't try this at home</a>
 				</li>
 			</ul> 
