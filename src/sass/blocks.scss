@@ -85,11 +85,6 @@ $font-big-weight: bold;
   
   @include font-big;  //Including font-big style
   @include linear-gradient(map-get($colors, light-background), map-get($colors, dark-background));
-    
-  @media screen and (max-width: 1040px) {   //Only applied if screen is smaller than X px (width)
-    color: map-get($colors, dark-font);
-    background-color: map-get($colors, light-background);
-  }   
 }
 
 
