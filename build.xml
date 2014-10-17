@@ -30,7 +30,7 @@
 			<!-- for UNIX (e.g. on Jenkins server) -->
 			<exec executable="compass" failonerror="true" osfamily="unix">
 				<arg value="compile" />
-				<arg value="${tmp}" />
+				<arg value="./src" />
 			</exec>
 			
 			
