@@ -25,12 +25,12 @@ $font-big-weight: bold;
 
 // Mixin for big font properties 
 @mixin font-big($font-big-weight: normal) {
+  @content;
   font: {
     family: $_font1;
     size: $_font-extra-big;
     weight: $font-big-weight;
-  }  
-  @content;
+  }    
 }
 
 

@@ -86,20 +86,11 @@
   float: left;
 }
 
-
-.line1 .col1 {
-  background: $_colour3; 
-}  
-
-.line2 .col2 {
-  background: $_colour3; 
+.line1 .col1,  .line2 .col2 {
+  background: $_colour3;  
 }
 
-.line2 .col1 {
-  background: $_colour4; 
-}
-
-.line1 .col2 {
+.line1 .col2, .line2 .col1 {
   background: $_colour4;  
 }
 
