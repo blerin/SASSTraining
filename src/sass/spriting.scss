@@ -159,7 +159,7 @@ $icons-loop: $_path-icons-bunch;
 
 
 /* - SASS,  COMPASS - */
-@import "images/icons/*.png";
+@import "../images/icons/*.png";
 @include all-icons-sprites;
 
 .icon {
