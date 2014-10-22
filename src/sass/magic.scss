@@ -1,4 +1,4 @@
-//@import "sassy-buttons";
+@import "vendor/sassy-buttons";
 
 @import "modules/all";  //Getting all modules
 @import "partials/all";  //Getting all partials
@@ -90,42 +90,8 @@ $type-notification: (
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //-------------------------------------------------
-/*
+
 button {
   height: 45px;
   width: 120px;
@@ -150,4 +116,4 @@ button {
   @include sassy-button("shiny", 5px, 19px, orange); 
   @include sassy-button-style("push", orange);
 }
-*/
+
